@@ -43,8 +43,5 @@ The story has scaling issues when not viewed on a 14" m1 macbook pro. Github Pag
 ![Screenshot 13](screenshots/13.png)
 
 ### Screenshot 14
-![Screenshot 14](screenshots/14.png)
-
-### Screenshot 15
 ![Screenshot 14](screenshots/15-end.png)
 ---
