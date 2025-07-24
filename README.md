@@ -1,6 +1,6 @@
 # The Journey Of A Coffee Bean
 
-The story has scaling issues when not viewed on a 14" m1 macbook pro. Link to Screen Recording: [Journey of A Coffee Bean Recording](https://drive.google.com/file/d/1skeBPSjYlVwZWl8TM62LA2dlnlfNl_0x/view?usp=sharing)
+The story has scaling issues when not viewed on a 14" m1 macbook pro. Github Pages Link: https://aajuvale.github.io/Journey-Of-A-Coffee-Bean/
 ---
 
 ### Screenshot 1
