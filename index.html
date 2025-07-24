@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Journey of a Coffee Bean</title>
+    <link rel="stylesheet" href="styling.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="journey-of-coffee">
+        <h1>The Journey of a Coffee Bean</h1>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Hello! I'm a coffee bean, originating from Taiwan! On our first couple stops you'll learn more about
+                your lovely narrator, a coffee bean from the far away! We'll then learn about my worldwide coffee bean
+                family and what processes they go through! Below, you can see my home country and other coffee-producing countries!
+            </div>
+        </div>
+
+        <!-- Bubble Chart -->
+        <div class="step" data-step="1">
+            <div class="large-container" id="bubble-chart"></div>
+        </div>
+
+        <!-- comic 2 -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                I'm harvested in Taiwan. While my homeland doesn't harvest as many coffee bean friends as other
+                countries, our journey to your cup of coffee in the states is the longest. I was born on the Dragon
+                Coffee Farm in the northern mountains, and raised by the largest coffee company in Taiwan, Blossom
+                Valley. Explore the visualization below to check out the largest coffee companies in Taiwan!
+            </div>
+        </div>
+
+        <!-- Pie Chart Section -->
+        <div class="step" data-step="2">
+            <div class="visualization-container" id="pie-chart">
+                <h2 style="font-size: 28px; font-weight: bold; color: #331; margin: 10px 0 0 0;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top 5 Taiwanese Coffee Companies
+                </h2>
+            </div>
+        </div>
+
+         <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Here is some spoilers for my journey accross the world! This shows the start, middle, and end of my story. From where I started in Taiwan, then got roasted and shipped from New York, and then got turned into iced coffee in Arizona.
+            </div>
+        </div>
+
+        <!-- Globe Visualization -->
+        <div class="step" data-step="3">
+            <canvas id="globe-container"></canvas>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Once I arrive in my processing country, their methods vary depending on the country.
+                Let's see how different countries prepare me — it might affect my aroma or flavor! Click on any of the listed countries to see the ways that they prepare me. To learn more about the different ways I'm 
+                processed, hover over the methods shown!
+            </div>
+        </div>
+
+        <!-- Processing Bar Chart -->
+        <div class="step" data-step="4">
+            <div class="visualization-container" id="bar-chart">
+                <div id="barchartLabel"></div>
+                <div id="continentContainer">
+                    <div class="continentButton" onclick="northAmericaGraph('North America')">North America</div>
+                    <div class="continentButton" onclick="southAmericaGraph('South America')">South America</div>
+                    <div class="continentButton" onclick="asiaGraph('Asia')">Asia</div>
+                    <div class="continentButton" onclick="africaGraph('Africa')">Africa</div>
+                </div>
+                <svg id="processingChart"></svg>
+            </div>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                I’m getting closer to your cup every step of the way! If you look to the lower right corner of the
+                screen, you can see the progress of the coffee cup which represents my life's progress as a bean!👉↘️
+            </div>
+        </div>
+
+
+        <!-- Coffee Cup Progress -->
+        <div class="coffee-cup-container">
+            <div class="coffee-mask-wrapper">
+                <div class="coffee-fill"></div>
+                <img src="images/coffee_progress_cup.png" alt="Coffee Cup" class="coffee-cup-image">
+                <img src="images/coffee_progress_cup_BG.png" alt="Coffee Cup Background"
+                    class="coffee-cup-image-background"> <!-- DO NOT REMOVE THIS LINE PLEASE-->
+                <!-- THE ABOVE LINE IS A way to have the background show up behind the coffee cup so it doesn't have green or brown in the background DO NOT REMOVE THAT PLS GUYS -->
+            </div>
+        </div>
+
+
+
+        <!-- comic 6 -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                From farm to roast, my journey takes time, care, and effort. Drag me across the timeline to see how Taiwanese beans like me grow up,
+                and hover over the image to learn more about each stage of the life of a Taiwanese Coffee bean!
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="step" data-step="5">
+            <div class="visualization-container" id="timeline">
+                <div id="timeline-stage-label" style="
+                    position: relative;
+                    bottom: 0px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: #d4c4b1;
+                    padding: 12px 20px;
+                    font-size: 35px;
+                    font-weight: bold;
+                    color: #331;
+                    z-index: 1000;
+                ">
+                    Coffee Plant
+                </div>
+            </div>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Now that I’m roasted and ready, let’s explore my flavor profile!
+                I’m known for my aroma, acidity, sweetness and more. Select my country from the dropdown to see my
+                values!🇹🇼
+            </div>
+        </div>
+
+        <!-- Radar Chart -->
+        <div class="step" data-step="6">
+            <div class="visualization-container" id="radar-chart">
+                <h2 style="margin: 0 0 8px 0; font-size: 1.5rem; transform: translate(15px, 20px);">Select a country to
+                    view the radar chart:</h2>
+                <select id="country-select">
+                    <option value="Mexico">Mexico</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Taiwan">Taiwan</option>
+                </select>
+                <div id="taiwan-info"></div>
+            </div>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Curious about how much I’m worth? This line chart tracks how coffee prices have changed over time, from
+                harvest to sale 📈.
+                Hover over the line to see how much I cost throughout the decades or look closer by choosing a specific
+                year!
+            </div>
+        </div>
+
+        <!-- Price Chart -->
+        <div class="step" data-step="7">
+            <div class="visualization-container" id="price-chart">
+                <div id="priceChartLabel">Average Price of Coffee Throughout the Decades</div>
+                <svg id="priceChartSvg"></svg>
+                <div id="chooseYearsLneChart">
+                    <input type="checkbox" id="priceCheckBox" name="priceCheckBox">
+                    <label for="priceCheckBox" id="priceCheckLabel">View Specific Year</label><br>
+                    <input type="range" id="priceYearRange" name="priceYearRange" min="1973" max="2025"
+                        onchange="getRadioYear()" value="2000" disabled>
+                    <label for="priceYearRange" id="priceRangeLabel">2000</label><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                What do people think of me?🤔 This survey shows how drinkers enjoy other beans like me, the coffee shops they get them from, and if they like to drink coffee strong, with creamer, or sweet.
+            </div>
+        </div>
+
+        <!-- Survey Sankey -->
+        <div class="step" data-step="8">
+            <div class="visualization-container" id="sankey-diagram"></div>
+        </div>
+
+        <!-- comic -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                This next visualization shows which combinations of coffee habits/preferences exist among students, how
+                many people fall into each combination, and how big each individual coffee-related group is overall.
+            </div>
+        </div>
+
+        <!-- Upset Plot -->
+        <div class="step" data-step="8">
+            <div class="visualization-container" id="upset-diagram"></div>
+        </div>
+
+        <!-- Custom Plot -->
+        <div class="step" data-step="8">
+            <div class="visualization-container" id="custom-diagram"></div>
+        </div>
+
+        <!-- comic 11 -->
+        <div class="comic-transition">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Wait... not everyone drinks coffee? 😮
+                Why would anyone not want to drink me?!
+                Let's see what these mysterious non-coffee drinkers are sipping on instead...
+            </div>
+        </div>
+
+        <!-- Word Cloud -->
+        <div class="step" data-step="9">
+            <div class="large-container" id="wordcloud"></div>
+        </div>
+
+
+        <!-- comic -->
+        <div class="comic-end">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                Looks all those non coffee drinkers just really like water.🙄 Anyways, I have finally reached my final form! 🌟
+            </div>
+        </div>
+
+        <!-- Professor Results -->
+        <div class="step" data-step="10">
+            <div class="visualization-container" id="professor-results"></div>
+        </div>
+
+
+        <!-- chris bryan quote -->
+        <div class="comic-quote">
+            <div class="comic-bubble" style="top: 20%; left: 20%;">
+                I'm a little disappointed it didn't let me discuss all of my coffee paraphernalia, which includes a pour
+                over kit, aeropress, espresso machine, chemex, french press, ibrik, and a moka express (and I sometimes
+                use my wife's keurig when I'm feeling lazy).
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Individual visualization scripts -->
+    <script src="javascript/colors.js"></script>
+    <script src="javascript/packedchart.js"></script>
+    <script src="javascript/piechart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+    <script src="javascript/globe.js" type="module"></script>
+    <script src="javascript/timeline.js"></script>
+    <script src="javascript/radarchart.js"></script>
+    <script src="javascript/pricechart.js"></script>
+    <script src="javascript/wordcloud.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <script src="javascript/sankey.js"></script>
+    <script src="javascript/professor.js"></script>
+    <script src="javascript/upset.js"></script>
+    <script src="javascript/processingChart.js"></script>
+    <script src="javascript/custom.js"></script>
+    <script src="javascript/cupprogress.js"></script>
+
+    <div class="closer">
+        <h3>Thank you for watching my story!</h3>
+    </div>
+</body>
+
+</html>

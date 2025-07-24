@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    font-family: 'Futura';
+    display: block;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to bottom, #016738, #352316);
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 275px;
+}
+
+.journey-of-coffee {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.journey-of-coffee h1 {
+    text-align: center;
+    color: #ffff;
+    font-size: 40px;
+}
+
+/* Step styling */
+.step {
+    margin: 30px 0;
+    min-height: 100vh;  /* this changes the spacing gap problem within the containers*/
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+/* Visualization containers */
+.visualization-container {
+    position: sticky;
+    top: 170px;
+    height: 740px;
+    width: 100%;
+    background-color: #d4c4b1;
+    margin: 32px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 3px solid black;
+}
+
+/* bubble chart container */
+.large-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1000px;
+    background-color: #d4c4b1;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: none;
+    overflow: hidden;
+    border: 3px solid black;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    padding: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+/* Globe container */
+#globe-container {
+    position: sticky;
+    top: 170px;
+    height: 740px;
+    width: 100%;
+    background: #d4c4b1;
+    margin: 32px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 3px solid black;
+}
+
+/* Country select styling */
+#country-select {
+    position: absolute;
+    top: 27px;
+    left: 550px;
+    z-index: 100;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* comic bubbles and stuff */
+.comic-transition {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('/images/the-coffee-bean.png') no-repeat left center;
+    background-size: contain;
+    position: relative;
+    margin: 32px 0;
+    padding-left: 120px;
+}
+
+.comic-end {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('/images/iced-coffee-clipart.png') no-repeat left center;
+    background-size: contain;
+    position: relative;
+    margin: 40px 0;
+    /* padding-left: 120px; */
+}
+
+.comic-quote {
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('/images/chris_bryan-modified.jpeg') no-repeat;
+    background-position: 10px 0; 
+    background-size: auto; 
+    background-size: contain;
+    position: relative;
+    margin: 40px 0;
+    padding-right: 150px;
+}
+
+.comic-bubble {
+    position: absolute;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 8px; 
+    padding: 20px;
+    width: 900px; 
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    left: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-5%);
+}
+
+.comic-bubble::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    bottom: 20px;
+    left: -10px;
+    transform: rotate(45deg);
+}
+
+
+/* coffee cup code */
+.coffee-cup-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.coffee-mask-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.coffee-fill {
+    position: absolute;
+    bottom: 12%;
+    left: 18.5%;
+    width: 58%;
+    height: 0%;
+    background: #6e523b;
+    transition: height 0.3s ease-out;
+    z-index: 1;
+    clip-path: polygon(21% 97%, 79% 97%, 100% 2%, 2% 2%);
+}
+
+.coffee-cup-image {
+    position: absolute;
+    top: 0;
+    left: -22.5%;
+    height: 285px;
+    width: auto;
+    z-index: 2;
+}
+
+/* DO NOT REMOVE THIS PART PLEASE */
+.coffee-cup-image-background {
+    position: absolute;
+    top: 0;
+    left: -22.5%;
+    height: 285px;
+    width: auto;
+    z-index: 0;
+}
+
+/* --- Sankey Chart Styles --- */
+#sankey-diagram {
+    background-color: #d4c4b1;
+    padding: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#sankey-diagram svg {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* --- Word Cloud Styles --- */
+
+#wordcloud {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#wordcloud svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.wordcloud-word {
+    cursor: default;
+    transition: fill 0.2s ease-in-out;
+}
+
+/* Logo Grey out for UpSet Plot */
+.logo-inactive {
+    opacity: 0.2;
+}
+
+#price-chart{
+    height: 640px;
+}
+#priceChartSvg{
+    margin-top: 80px;
+    width: 1200px;
+    height: 500px;
+}
+
+#priceChartLabel {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    top: 40px;
+    left: 230px;
+    text-align: center;
+}
+
+#chooseYearsLneChart {
+    position: absolute;
+    top: 550px;
+    left: 15px;
+}
+
+#priceYearRange {
+    width: 250px;
+    accent-color: #5e4538;
+    position: relative;
+    top: -5px;
+}
+
+#priceCheckLabel {
+    font-size: 17px;
+
+}
+
+#priceRangeLabel {
+    font-size: 21px;
+    font-weight: bolder;
+    position: relative;
+    top: -8px;
+}
+
+
+#processingChart {
+    margin-top: 125px;
+    width: 1200px;
+    height: 500px; 
+}
+
+#continentContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 695px;
+    top: 30px;
+    height: 85px;
+    width: 510px;
+}
+
+.continentButton {
+    background-color: #5e4538;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 55px;
+    margin-right: 8px;
+    margin-top: 15px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px hsl(0deg 0% 25%);
+}
+
+#barchartLabel {
+    position: absolute;
+    font-size: 29.5px;
+    font-weight: bold;
+    top: 55px;
+    left: 100px;
+}
+
+#bar-chart{
+    height: 640px;
+}
+
+.continentButton:hover {
+    background-color: #3d2d24;
+    cursor: pointer;
+}
+
+.closer {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 40px;
+    color: white;
+}
+
+/* Custom Vis */
+.custom-x-axis-label {
+    font-optical-sizing: none;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.custom-y-axis-label {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.custom-x-axis-name,
+.custom-y-axis-name {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 20px;
+}
