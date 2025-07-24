@@ -109,7 +109,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: url('/images/the-coffee-bean.png') no-repeat left center;
+    background: url('images/the-coffee-bean.png') no-repeat left center;
     background-size: contain;
     position: relative;
     margin: 32px 0;
@@ -121,7 +121,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: url('/images/iced-coffee-clipart.png') no-repeat left center;
+    background: url('images/iced-coffee-clipart.png') no-repeat left center;
     background-size: contain;
     position: relative;
     margin: 40px 0;
@@ -133,7 +133,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: url('/images/chris_bryan-modified.jpeg') no-repeat;
+    background: url('images/professor.avif') no-repeat;
     background-position: 10px 0; 
     background-size: auto; 
     background-size: contain;

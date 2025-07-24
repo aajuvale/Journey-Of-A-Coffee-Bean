@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const frequency = "More than 7 times a week";
     const temperature = "Hot coffee";
   
-    const nodes = ["Chris Bryan", ...sources, preference, frequency, temperature].map(name => ({ name }));
+    const nodes = ["Professor", ...sources, preference, frequency, temperature].map(name => ({ name }));
     const nodeIndex = new Map(nodes.map((d, i) => [d.name, i]));
   
     const sankeyLinks = [];
   
-    // Chris Bryan → Each Source
+    // Professor → Each Source
     sources.forEach(source => {
       sankeyLinks.push({
-        source: nodeIndex.get("Chris Bryan"),
+        source: nodeIndex.get("Professor"),
         target: nodeIndex.get(source),
         value: 1
       });
