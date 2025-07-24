@@ -1,7 +1,6 @@
 # The Journey Of A Coffee Bean
 
-Our story has scaling issues when not viewed on a 14" m1 macbook pro. Chris Bryan has asked us to attach screenshots of what it looks like on my end, so I have placed them in the screenshots folder. I have also embedded them here.
-I have also screen recorded what it looks like on my end and this is the link to that: [Journey of A Coffee Bean Recording](https://drive.google.com/file/d/1skeBPSjYlVwZWl8TM62LA2dlnlfNl_0x/view?usp=sharing)
+Our story has scaling issues when not viewed on a 14" m1 macbook pro. Link to Screen Recording: [Journey of A Coffee Bean Recording](https://drive.google.com/file/d/1skeBPSjYlVwZWl8TM62LA2dlnlfNl_0x/view?usp=sharing)
 ---
 
 ### Screenshot 1
